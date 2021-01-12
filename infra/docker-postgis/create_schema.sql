@@ -5,13 +5,14 @@ BEGIN;
             constraint id_pkey
             primary key,
         national_provider_identifier integer not null,
-        provider_last_organization_name varchar(250) not null,
-        provider_first_name varchar(250),
-        provider_middle_name varchar(250),
-        provider_credentials varchar(50),
+        provider_last_organization_name varchar(500) not null,
+        provider_first_name varchar(500),
+        provider_middle_name varchar(500),
+        provider_credentials varchar(100),
         provider_gender char(1),
         entity_type char(1),
-        address varchar(250),
+        address varchar(500),
+        address2 varchar(500),
         city varchar(150),
         zip_code varchar(20),
         state varchar(3),
@@ -21,14 +22,39 @@ BEGIN;
         medicare_participation_indicator char(1),
         service_place char(1),
         hcpcs_code varchar(20),
-        hcpcs_description varchar(250),
+        hcpcs_description varchar(500),
         hcpcs_drug char(1),
-        services smallint,
-        medicare_beneficiaries smallint,
-        distinct_medicare_beneficiaries smallint,
+        services numeric(15, 8),
+        medicare_beneficiaries numeric(15, 8),
+        distinct_medicare_beneficiaries numeric(15, 8),
         average_medicare_allowed_amount numeric(15, 8),
         average_submitted_charge_amount numeric(15, 8),
         average_medicare_payment_amount numeric(15, 8),
         average_medicare_standardized_amount numeric(15, 8)
     );
+
+    COPY cms_medicare(national_provider_identifier, provider_last_organization_name,
+          provider_first_name, provider_middle_name, provider_credentials, provider_gender,
+          entity_type, address, address2, city, zip_code, state, country_code, provider_type,
+          medicare_participation_indicator, service_place, hcpcs_code, hcpcs_description,
+          hcpcs_drug, services, medicare_beneficiaries, distinct_medicare_beneficiaries,
+          average_medicare_allowed_amoudocker nt, average_submitted_charge_amount,
+          average_medicare_payment_amount, average_medicare_standardized_amount)
+    FROM '/data/medicare_full_data.csv'
+    DELIMITER ','
+    CSV HEADER;
+
+    delete from cms_medicare where city = 'SAN FRANCISCO';
+
+    COPY cms_medicare(national_provider_identifier, provider_last_organization_name,
+          provider_first_name, provider_middle_name, provider_credentials, provider_gender,
+          entity_type, address, address2, city, zip_code, state, country_code, geom, provider_type,
+          medicare_participation_indicator, service_place, hcpcs_code, hcpcs_description,
+          hcpcs_drug, services, medicare_beneficiaries, distinct_medicare_beneficiaries,
+          average_medicare_allowed_amount, average_submitted_charge_amount,
+          average_medicare_payment_amount, average_medicare_standardized_amount)
+    FROM '/data/medicare_SF_lat_long_data.csv'
+    DELIMITER ','
+    CSV HEADER;
+
 COMMIT;
