@@ -1,10 +1,10 @@
 from app.db.database import Database
-from app.models.provider_types import ProviderTypes
+from app.models.provider_type import ProviderType
 from typing import List
 import json
 
 
-def get(state: str, city: str) -> List[ProviderTypes]:
+def get(state: str, city: str) -> List[ProviderType]:
     db = Database()
 
     sql_query = "".join(["select cast(sum(services * average_submitted_charge_amount) as bigint) as "
@@ -21,6 +21,6 @@ def get(state: str, city: str) -> List[ProviderTypes]:
     result = db.query(sql_query, {"state": state, "city": city})
     response = []
     for row in result:
-        response.append(ProviderTypes.parse_raw(json.dumps(row[1])))
+        response.append(ProviderType.parse_raw(json.dumps(row[1])))
 
     return response
