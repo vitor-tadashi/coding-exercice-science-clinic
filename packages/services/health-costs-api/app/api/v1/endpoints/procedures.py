@@ -2,8 +2,8 @@ from typing import List
 
 from fastapi import APIRouter
 
-from backend.app import crud
-from backend.app.models.procedure import Procedure
+from app import crud
+from app.models.procedure import Procedure
 
 router = APIRouter()
 

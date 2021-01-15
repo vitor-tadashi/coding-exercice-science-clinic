@@ -33,6 +33,22 @@ BEGIN;
         average_medicare_standardized_amount numeric(15, 8)
     );
 
+    CREATE INDEX index_hcpcs_code ON cms_medicare
+    (
+        hcpcs_code
+    );
+
+    CREATE INDEX index_state ON cms_medicare
+    (
+        state
+    );
+
+    CREATE INDEX index_state_city ON cms_medicare
+    (
+        state,
+        city
+    );
+
     COPY cms_medicare(national_provider_identifier, provider_last_organization_name,
           provider_first_name, provider_middle_name, provider_credentials, provider_gender,
           entity_type, address, address2, city, zip_code, state, country_code, provider_type,
@@ -40,7 +56,7 @@ BEGIN;
           hcpcs_drug, services, medicare_beneficiaries, distinct_medicare_beneficiaries,
           average_medicare_allowed_amount, average_submitted_charge_amount,
           average_medicare_payment_amount, average_medicare_standardized_amount)
-    FROM '/data/medicare_full_data.csv'
+    FROM '/data/medicare_data.csv'
     DELIMITER ','
     CSV HEADER;
 

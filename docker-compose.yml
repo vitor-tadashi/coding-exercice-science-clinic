@@ -1,0 +1,15 @@
+version: '3.1'
+
+services:
+  postgis:
+    build: ./infra/docker-postgis
+    restart: always
+    ports:
+      - 5432:5432
+
+  health-costs-api:
+    build: ./packages/services/health-costs-api
+    links:
+      - 'postgis:postgis'
+    ports:
+      - 8080:8080

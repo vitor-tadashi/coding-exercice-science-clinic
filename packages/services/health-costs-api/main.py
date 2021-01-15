@@ -1,7 +1,8 @@
 from fastapi import FastAPI
 
-from backend.app.api.v1.api import api_router
-from backend.app.core import config
+from app.api.v1.api import api_router
+from app.core import config
+
 app = FastAPI()
 
 import uvicorn

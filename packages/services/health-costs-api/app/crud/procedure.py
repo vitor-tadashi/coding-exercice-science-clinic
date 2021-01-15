@@ -1,5 +1,5 @@
-from backend.app.db.database import Database
-from backend.app.models.procedure import Procedure
+from app.db.database import Database
+from app.models.procedure import Procedure
 from typing import List
 import json
 
@@ -32,7 +32,6 @@ def get_by_hcpcs_code(hcpcs_code: int) -> List[Procedure]:
     result = db.query(sql_query, {"hcpcs_code": hcpcs_code})
     response = []
     for row in result:
-        print(Procedure.parse_raw(json.dumps(row[0])))
         response.append(Procedure.parse_raw(json.dumps(row[0])))
 
     return response

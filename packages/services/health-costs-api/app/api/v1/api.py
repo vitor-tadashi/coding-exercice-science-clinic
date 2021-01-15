@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from backend.app.api.v1.endpoints import procedures, provider_types
+from app.api.v1.endpoints import provider_types, procedures
 
 api_router = APIRouter()
 api_router.include_router(procedures.router, tags=["procedures"])

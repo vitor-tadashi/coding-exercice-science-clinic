@@ -1,5 +1,5 @@
-from backend.app.db.database import Database
-from backend.app.models.provider_types import ProviderTypes
+from app.db.database import Database
+from app.models.provider_types import ProviderTypes
 from typing import List
 import json
 

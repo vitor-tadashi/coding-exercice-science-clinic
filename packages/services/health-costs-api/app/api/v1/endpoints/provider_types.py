@@ -2,8 +2,8 @@ from typing import List, Optional
 
 from fastapi import APIRouter
 
-from backend.app import crud
-from backend.app.models.provider_types import ProviderTypes
+from app import crud
+from app.models.provider_types import ProviderTypes
 
 router = APIRouter()
 

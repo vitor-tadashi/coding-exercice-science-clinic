@@ -1,5 +1,5 @@
 import psycopg2
-from backend.app.core.config import POSTGRES_SERVER, POSTGRES_DB, POSTGRES_PASSWORD, POSTGRES_USER
+from app.core.config import POSTGRES_SERVER, POSTGRES_DB, POSTGRES_PASSWORD, POSTGRES_USER
 
 
 class Database:
