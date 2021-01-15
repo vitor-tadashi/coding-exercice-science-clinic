@@ -4,13 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
-sqlalchemy = "*"
-psycopg2 = "*"
-base = "*"
 uvicorn = "*"
-fastapi = "*"
-typing = "*"
-pydantic = "*"
 
 [dev-packages]
 

@@ -127,3 +127,4 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+/infra/docker-postgis/data/medicare_full_data.csv

@@ -38,7 +38,7 @@ BEGIN;
           entity_type, address, address2, city, zip_code, state, country_code, provider_type,
           medicare_participation_indicator, service_place, hcpcs_code, hcpcs_description,
           hcpcs_drug, services, medicare_beneficiaries, distinct_medicare_beneficiaries,
-          average_medicare_allowed_amoudocker nt, average_submitted_charge_amount,
+          average_medicare_allowed_amount, average_submitted_charge_amount,
           average_medicare_payment_amount, average_medicare_standardized_amount)
     FROM '/data/medicare_full_data.csv'
     DELIMITER ','
