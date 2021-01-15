@@ -70,3 +70,13 @@ server: uvicorn
 ## API Documentation
 
 Great! Now you're ready to go to `http://localhost:8080/docs/` and try out the example!
+
+
+## Geolocation API
+You will find an API to list all health services in the region filtered by geolocation. 
+This API was built just to show that it is possible to make geolocation queries using PostGIS. Unfortunately, I was only able to geolocate providers in San Francisco, as access to the Google API is paid out of a certain number of requests.
+
+To test:
+```shell script
+curl -X GET "http://localhost:8000/healthcare/v1/procedures/geo/search?west_limit=-124.7&south_limit=36.65&east_limit=-120.16&north_limit=38.95&offset=0&limit=50" -H  "accept: application/json"
+```
