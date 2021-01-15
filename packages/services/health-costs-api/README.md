@@ -1,28 +1,20 @@
 **0. Prerequisites:**
 
 ```
-Python 3.6+
+Pipenv https://pypi.org/project/pipenv/
 ```
 
 **1. Installation:**
-```
-git clone https://github.com/lasagnu/fastapi-postgres
-cd ./fastapi-postgres
-python -m venv venv
-source venv/bin/activate
-pip install -r requirements.txt
+```shell script
+pipenv install
 ```
 
-**2. Configuration:**
+**2. Run:**
 
-All required data/credentials could be passed via [environment variables](https://www.google.com/search?q=how+to+set+environment+variables+linux), their names could be found  in 
-**backend/app/core/config.py**
-
-**3. Startup:**
-
-Once the configuration data is provided (or isn't..) just run the **main.py** file:
-```
-python main.py
+```shell script
+docker build ../../../infra/docker-postgis --tag postgis -f ../../../infra/docker-postgis/Dockerfile
+docker run --rm -d -p 5432:5432 postgis 
+uvicorn main:app --reload
 ```
 
-Enjoy this awesome framework!
+Enjoy the API! http://127.0.0.1:8000/docs
