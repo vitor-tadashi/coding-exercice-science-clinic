@@ -4,9 +4,7 @@ from typing import List
 import json
 
 
-def get_by_hcpcs_code(hcpcs_code: str) -> List[Procedure]:
-    db = Database()
-
+def get_by_hcpcs_code(db: Database, hcpcs_code: str) -> List[Procedure]:
     sql_query = "".join(["select json_build_object('state', state, ",
                          "'hcpcs_code', hcpcs_code, ",
                          "'hcpcs_description', hcpcs_description, ",
@@ -37,9 +35,7 @@ def get_by_hcpcs_code(hcpcs_code: str) -> List[Procedure]:
     return response
 
 
-def get_by_state(state: str, provider_type: str, limit: int, offset: int) -> List[Procedure]:
-    db = Database()
-
+def get_by_state(db: Database, state: str, provider_type: str, limit: int, offset: int) -> List[Procedure]:
     sql_query = "".join(["select json_build_object('state', state, ",
                          "'hcpcs_code', hcpcs_code, ",
                          "'hcpcs_description', hcpcs_description, ",
@@ -71,10 +67,8 @@ def get_by_state(state: str, provider_type: str, limit: int, offset: int) -> Lis
     return response
 
 
-def get_inside_polygon(west_limit: str, south_limit: str, east_limit: str, north_limit: str, limit: int, offset: int) \
+def get_inside_polygon(db: Database, west_limit: str, south_limit: str, east_limit: str, north_limit: str, limit: int, offset: int) \
         -> List[Procedure]:
-    db = Database()
-
     sql_query = "".join(["select json_build_object('state', state, ",
                          "'hcpcs_code', hcpcs_code, ",
                          "'hcpcs_description', hcpcs_description, ",

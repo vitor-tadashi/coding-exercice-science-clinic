@@ -10,6 +10,7 @@ uvicorn = "*"
 fastapi = "*"
 typing = "*"
 pydantic = "*"
+starlette = "*"
 
 [dev-packages]
 

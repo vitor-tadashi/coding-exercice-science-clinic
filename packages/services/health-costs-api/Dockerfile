@@ -1,6 +1,6 @@
 FROM python:3.7
 
-RUN pip install fastapi uvicorn typing pydantic psycopg2 base
+RUN pip install fastapi uvicorn typing pydantic psycopg2 base starlette
 
 EXPOSE 8080
 ENV POSTGRES_SERVER postgis

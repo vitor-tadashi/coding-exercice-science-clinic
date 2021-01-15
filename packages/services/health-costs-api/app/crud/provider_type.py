@@ -4,9 +4,7 @@ from typing import List
 import json
 
 
-def get(state: str, city: str) -> List[ProviderType]:
-    db = Database()
-
+def get(db: Database, state: str, city: str) -> List[ProviderType]:
     sql_query = "".join(["select cast(sum(services * average_submitted_charge_amount) as bigint) as "
                          "total_submitted_charge_amount, ",
                          "json_build_object('provider_type', provider_type, ",
