@@ -49,6 +49,10 @@ BEGIN;
         city
     );
 
+    CREATE INDEX cms_medicare_geom_idx
+      ON cms_medicare
+      USING GIST (geom);
+
     COPY cms_medicare(national_provider_identifier, provider_last_organization_name,
           provider_first_name, provider_middle_name, provider_credentials, provider_gender,
           entity_type, address, address2, city, zip_code, state, country_code, provider_type,
