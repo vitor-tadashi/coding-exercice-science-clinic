@@ -32,7 +32,7 @@ Full tech stack [here](/techstack.md)
 # Tech Stack File
 ![](https://img.stackshare.io/repo.svg "repo") [vitor-tadashi/coding-exercice-science-clinic](https://github.com/vitor-tadashi/coding-exercice-science-clinic)![](https://img.stackshare.io/public_badge.svg "public")
 <br/><br/>
-|31<br/>Tools used|02/09/24 <br/>Report generated|
+|31<br/>Tools used|02/29/24 <br/>Report generated|
 |------|------|
 </div>
 
@@ -150,7 +150,7 @@ Full tech stack [here](/techstack.md)
 |[python-dateutil](https://pypi.org/project/python-dateutil)|v2.8.1|01/15/21|Vitor Tadashi |NRL|N/A|
 |[requests](https://pypi.org/project/requests)|v2.25.1|01/15/21|Vitor Tadashi |Apache-2.0|[CVE-2023-32681](https://github.com/advisories/GHSA-j8r2-6x86-q33q) (Moderate)|
 |[six](https://pypi.org/project/six)|v1.13.0|01/15/21|Vitor Tadashi |MIT|N/A|
-|[starlette](https://pypi.org/project/starlette)|v0.13.6|01/15/21|Vitor Tadashi |BSD-3-Clause|[](https://github.com/advisories/GHSA-93gm-qmq6-w238) (High)<br/>[](https://github.com/advisories/GHSA-qj8w-rv5x-2v9h) (High)<br/>[CVE-2023-30798](https://github.com/advisories/GHSA-3qj8-93xh-pwh2) (High)<br/>[](https://github.com/advisories/GHSA-74m5-2c7w-9w3x) (Moderate)<br/>[CVE-2023-29159](https://github.com/advisories/GHSA-v5gw-mw7f-84px) (Low)|
+|[starlette](https://pypi.org/project/starlette)|v0.13.6|01/15/21|Vitor Tadashi |BSD-3-Clause|[CVE-2024-24762](https://github.com/advisories/GHSA-2jv5-9r88-3w3p) (High)<br/>[](https://github.com/advisories/GHSA-93gm-qmq6-w238) (High)<br/>[](https://github.com/advisories/GHSA-qj8w-rv5x-2v9h) (High)<br/>[CVE-2023-30798](https://github.com/advisories/GHSA-3qj8-93xh-pwh2) (High)<br/>[](https://github.com/advisories/GHSA-74m5-2c7w-9w3x) (Moderate)<br/>[CVE-2023-29159](https://github.com/advisories/GHSA-v5gw-mw7f-84px) (Low)|
 |[typing](https://pypi.org/project/typing)|v3.7.4|01/15/21|Vitor Tadashi |Python-2.0|N/A|
 |[urllib3](https://pypi.org/project/urllib3)|v1.26.2|01/15/21|Vitor Tadashi |MIT|[CVE-2021-33503](https://github.com/advisories/GHSA-q2q7-5pp4-w6pg) (High)<br/>[CVE-2021-28363](https://github.com/advisories/GHSA-5phf-pp7p-vc2r) (Moderate)<br/>[CVE-2023-45803](https://github.com/advisories/GHSA-g4mx-q9vg-27p4) (Moderate)<br/>[CVE-2023-43804](https://github.com/advisories/GHSA-v845-jxx5-vc9f) (Moderate)|
 |[uvicorn](https://pypi.org/project/uvicorn)|v0.13.3|01/15/21|Vitor Tadashi |BSD-3-Clause|N/A|
